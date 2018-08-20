@@ -1,6 +1,6 @@
 package com.github.mvpbasearchitecture.utils;
 
-public class AppConstants {
+public final class AppConstants {
     public static final String DB_NAME = "app.db";
     public static final String PREF_NAME = "app_pref";
 

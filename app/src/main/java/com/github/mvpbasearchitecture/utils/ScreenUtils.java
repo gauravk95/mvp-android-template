@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-public class ScreenUtils {
+public final class ScreenUtils {
 
     /**
      * Convenience method for getting into Immersive mode.

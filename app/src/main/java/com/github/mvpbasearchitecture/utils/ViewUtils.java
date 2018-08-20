@@ -2,7 +2,7 @@ package com.github.mvpbasearchitecture.utils;
 
 import android.content.res.Resources;
 
-public class ViewUtils {
+public final class ViewUtils {
 
     public static float pxToDp(float px) {
         float densityDpi = Resources.getSystem().getDisplayMetrics().densityDpi;

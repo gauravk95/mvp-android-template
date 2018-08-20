@@ -20,7 +20,7 @@ import com.github.mvpbasearchitecture.utils.GeneralUtils;
 /**
  * Created by gk
  */
-public abstract class BaseFragment<T> extends Fragment implements BaseContract.View<T> {
+public abstract class BaseMVPFragment<T> extends Fragment implements BaseContract.View<T> {
 
     protected Dialog progressDialog;
 

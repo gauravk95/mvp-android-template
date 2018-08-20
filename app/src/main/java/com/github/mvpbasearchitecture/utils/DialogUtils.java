@@ -11,7 +11,7 @@ import com.github.mvpbasearchitecture.R;
  * Created by gk.
  */
 
-public class DialogUtils {
+public final class DialogUtils {
 
     public static ProgressDialog createProgressDialog(Context context) {
         ProgressDialog progressDialog = new ProgressDialog(context);

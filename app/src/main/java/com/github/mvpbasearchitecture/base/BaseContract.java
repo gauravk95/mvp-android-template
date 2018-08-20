@@ -27,7 +27,7 @@ public interface BaseContract {
 
     interface Presenter<V> {
 
-        void subscribe();
+        void subscribe(V view);
 
         void unSubscribe();
 

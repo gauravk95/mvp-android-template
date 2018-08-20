@@ -20,7 +20,7 @@ import com.github.mvpbasearchitecture.utils.GeneralUtils;
 /**
  * Created by gk on 21-03-2018
  */
-public abstract class BaseDialog<T> extends DialogFragment implements BaseContract.View<T> {
+public abstract class BaseMVPDialog<T> extends DialogFragment implements BaseContract.View<T> {
 
     protected Dialog progressDialog;
 
