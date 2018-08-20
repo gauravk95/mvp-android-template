@@ -3,6 +3,7 @@ package com.github.mvpbasearchitecture.di.component;
 import com.github.mvpbasearchitecture.di.PerActivity;
 import com.github.mvpbasearchitecture.di.module.ActivityModule;
 import com.github.mvpbasearchitecture.ui.main.MainActivity;
+import com.github.mvpbasearchitecture.ui.main.MainFragment;
 
 import dagger.Component;
 
@@ -15,5 +16,7 @@ import dagger.Component;
 public interface ActivityComponent {
 
     void inject(MainActivity activity);
+
+    void inject(MainFragment fragment);
 
 }

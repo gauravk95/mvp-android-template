@@ -8,6 +8,9 @@ import android.view.ViewGroup;
 
 import com.github.mvpbasearchitecture.R;
 import com.github.mvpbasearchitecture.base.BaseMVPFragment;
+import com.github.mvpbasearchitecture.di.component.ActivityComponent;
+
+import javax.inject.Inject;
 
 /**
  * Created by gk
@@ -17,7 +20,8 @@ public class MainFragment extends BaseMVPFragment<MainContract.Presenter> implem
 
     private View inflatedView;
 
-    private MainContract.Presenter mPresenter;
+    @Inject
+    MainContract.Presenter mPresenter;
 
     public static MainFragment newInstance(){
         return new MainFragment();
@@ -38,6 +42,12 @@ public class MainFragment extends BaseMVPFragment<MainContract.Presenter> implem
 
         initViews();
 
+        ActivityComponent component = getActivityComponent();
+        if (component != null) {
+            component.inject(this);
+            mPresenter.onAttach(this);
+        }
+
         return inflatedView;
     }
 
@@ -51,15 +61,9 @@ public class MainFragment extends BaseMVPFragment<MainContract.Presenter> implem
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
-        mPresenter.subscribe();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        mPresenter.unSubscribe();
+    public void onDestroy() {
+        mPresenter.onDetach();
+        super.onDestroy();
     }
 
 }

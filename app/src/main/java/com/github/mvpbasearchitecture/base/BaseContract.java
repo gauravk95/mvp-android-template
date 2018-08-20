@@ -27,9 +27,9 @@ public interface BaseContract {
 
     interface Presenter<V> {
 
-        void subscribe(V view);
+        void onAttach(V view);
 
-        void unSubscribe();
+        void onDetach();
 
     }
 

@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 
 import com.github.mvpbasearchitecture.base.MainApplication;
+import com.github.mvpbasearchitecture.data.source.repository.AppDataRepository;
 import com.github.mvpbasearchitecture.data.source.repository.AppRepository;
 import com.github.mvpbasearchitecture.di.ApplicationContext;
 import com.github.mvpbasearchitecture.di.module.ApplicationModule;

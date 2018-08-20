@@ -3,7 +3,11 @@ package com.github.mvpbasearchitecture.di.module;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 
+import com.github.mvpbasearchitecture.data.source.repository.AppDataSource;
+import com.github.mvpbasearchitecture.data.source.repository.AppRepository;
 import com.github.mvpbasearchitecture.di.ActivityContext;
+import com.github.mvpbasearchitecture.ui.main.MainContract;
+import com.github.mvpbasearchitecture.ui.main.MainPresenter;
 import com.github.mvpbasearchitecture.utils.rx.AppSchedulerProvider;
 import com.github.mvpbasearchitecture.utils.rx.SchedulerProvider;
 
@@ -43,6 +47,13 @@ public class ActivityModule {
     @Provides
     SchedulerProvider provideSchedulerProvider() {
         return new AppSchedulerProvider();
+    }
+
+    @Provides
+    MainContract.Presenter provideMainPresenter(AppRepository appRepository,
+                                                SchedulerProvider schedulerProvider,
+                                                CompositeDisposable compositeDisposable) {
+        return new MainPresenter(appRepository, schedulerProvider, compositeDisposable);
     }
 
 }

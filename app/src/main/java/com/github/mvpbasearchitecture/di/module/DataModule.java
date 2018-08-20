@@ -6,7 +6,9 @@ import com.github.mvpbasearchitecture.data.source.local.AppLocalDataSource;
 import com.github.mvpbasearchitecture.data.source.prefs.AppPreferencesHelper;
 import com.github.mvpbasearchitecture.data.source.prefs.PreferencesHelper;
 import com.github.mvpbasearchitecture.data.source.remote.AppRemoteDataSource;
+import com.github.mvpbasearchitecture.data.source.repository.AppDataRepository;
 import com.github.mvpbasearchitecture.data.source.repository.AppDataSource;
+import com.github.mvpbasearchitecture.data.source.repository.AppRepository;
 import com.github.mvpbasearchitecture.di.DatabaseInfo;
 import com.github.mvpbasearchitecture.di.Local;
 import com.github.mvpbasearchitecture.di.PreferenceInfo;
@@ -47,6 +49,12 @@ public class DataModule {
     @Remote
     AppDataSource provideAppRemoteDataSource(AppRemoteDataSource appRemoteDataSource) {
         return appRemoteDataSource;
+    }
+
+    @Provides
+    @Singleton
+    AppRepository provideAppRepository(AppDataRepository dataRepository) {
+        return dataRepository;
     }
 
     @Provides

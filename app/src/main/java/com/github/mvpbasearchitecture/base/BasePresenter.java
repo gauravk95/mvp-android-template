@@ -1,38 +1,38 @@
 package com.github.mvpbasearchitecture.base;
 
 import com.github.mvpbasearchitecture.data.source.repository.AppDataSource;
+import com.github.mvpbasearchitecture.data.source.repository.AppRepository;
+import com.github.mvpbasearchitecture.utils.rx.SchedulerProvider;
 
 import javax.inject.Inject;
 
 import io.reactivex.Scheduler;
 import io.reactivex.disposables.CompositeDisposable;
 
-public class BasePresenter<V extends BaseContract.View> implements BaseContract.Presenter<V>{
+public class BasePresenter<V> implements BaseContract.Presenter<V>{
 
-    private AppDataSource mAppDataRepository;
-    private Scheduler mExecutionThread, mPostExecutionThread;
-    private CompositeDisposable mCompositeDisposable;
+    private final AppRepository mAppDataRepository;
+    private final SchedulerProvider mSchedulerProvider;
+    private final CompositeDisposable mCompositeDisposable;
 
     private V mView;
 
     @Inject
-    public BasePresenter(AppDataSource appSource,
-                         Scheduler execThread,
-                         Scheduler postExecThread,
+    public BasePresenter(AppRepository appRepository,
+                         SchedulerProvider schedulerProvider,
                          CompositeDisposable compositeDisposable) {
-        this.mAppDataRepository = appSource;
-        this.mExecutionThread = execThread;
-        this.mPostExecutionThread = postExecThread;
+        this.mAppDataRepository = appRepository;
+        this.mSchedulerProvider = schedulerProvider;
         this.mCompositeDisposable = compositeDisposable;
     }
 
     @Override
-    public void subscribe(V view) {
+    public void onAttach(V view) {
         this.mView = view;
     }
 
     @Override
-    public void unSubscribe() {
+    public void onDetach() {
         mCompositeDisposable.clear();
         mView = null;
     }
@@ -49,12 +49,8 @@ public class BasePresenter<V extends BaseContract.View> implements BaseContract.
         return mAppDataRepository;
     }
 
-    protected Scheduler getExecutionThread(){
-        return mExecutionThread;
-    }
-
-    protected Scheduler getmPostExecutionThread(){
-        return mPostExecutionThread;
+    protected SchedulerProvider getmSchedulerProvider(){
+        return mSchedulerProvider;
     }
 
 }

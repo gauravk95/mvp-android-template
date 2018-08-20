@@ -3,6 +3,7 @@ package com.github.mvpbasearchitecture.base;
 import android.app.Application;
 import android.content.Context;
 
+import com.github.mvpbasearchitecture.data.source.repository.AppDataSource;
 import com.github.mvpbasearchitecture.data.source.repository.AppRepository;
 import com.github.mvpbasearchitecture.di.component.ApplicationComponent;
 import com.github.mvpbasearchitecture.di.component.DaggerApplicationComponent;
@@ -16,7 +17,7 @@ import javax.inject.Inject;
 public class MainApplication extends Application {
 
     @Inject
-    AppRepository mMusicRepo;
+    AppRepository mRepository;
 
     private static Application sInstance;
 

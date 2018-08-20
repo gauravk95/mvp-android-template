@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.mvpbasearchitecture.R;
+import com.github.mvpbasearchitecture.di.component.ActivityComponent;
 import com.github.mvpbasearchitecture.utils.DialogUtils;
 import com.github.mvpbasearchitecture.utils.GeneralUtils;
 
@@ -23,10 +24,14 @@ import com.github.mvpbasearchitecture.utils.GeneralUtils;
 public abstract class BaseMVPFragment<T> extends Fragment implements BaseContract.View<T> {
 
     protected Dialog progressDialog;
+    protected BaseActivity mActivity;
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        if (context instanceof BaseActivity) {
+            this.mActivity = (BaseActivity) context;
+        }
     }
 
     @Override
@@ -105,6 +110,13 @@ public abstract class BaseMVPFragment<T> extends Fragment implements BaseContrac
             textView.setTextColor(ContextCompat.getColor(getActivity(), R.color.white));
             snackbar.show();
         }
+    }
+
+    protected ActivityComponent getActivityComponent() {
+        if (mActivity != null) {
+            return mActivity.getActivityComponent();
+        }
+        return null;
     }
 
     @Override

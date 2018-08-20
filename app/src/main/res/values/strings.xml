@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MVPBaseArchitecture</string>
+    <string name="toolbar_title">Toolbar</string>
 </resources>
