@@ -1,0 +1,25 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!--Custom text font styles OpenSans-->
+    <style name="text_font_opensans_light" parent="@android:style/Widget.TextView">
+        <item name="com.github.mvpbasearchitecture:typeface">fonts/OpenSans-Light.ttf</item>
+    </style>
+    <style name="text_font_opensans_regular" parent="@android:style/Widget.TextView">
+        <item name="com.github.mvpbasearchitecture:typeface">fonts/OpenSans-Regular.ttf</item>
+    </style>
+    <style name="text_font_opensans_semi_bold" parent="@android:style/Widget.TextView">
+        <item name="com.github.mvpbasearchitecture:typeface">fonts/OpenSans-SemiBold.ttf</item>
+    </style>
+    <style name="text_font_opensans_bold" parent="@android:style/Widget.TextView">
+        <item name="com.github.mvpbasearchitecture:typeface">fonts/OpenSans-Bold.ttf</item>
+    </style>
+
+</resources>
