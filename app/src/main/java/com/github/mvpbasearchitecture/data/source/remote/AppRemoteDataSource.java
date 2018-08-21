@@ -33,4 +33,9 @@ public class AppRemoteDataSource implements AppDataSource {
                 .getItemList()
                 .map(ResponseItemHolder::getItems);
     }
+
+    @Override
+    public void updateItemList(List<Item> items) {
+        //do nothing
+    }
 }

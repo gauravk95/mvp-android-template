@@ -40,5 +40,5 @@ public abstract class BaseActivity extends AppCompatActivity {
     public void onNewIntent(Intent intent) {
         this.setIntent(intent);
     }
-
+    
 }

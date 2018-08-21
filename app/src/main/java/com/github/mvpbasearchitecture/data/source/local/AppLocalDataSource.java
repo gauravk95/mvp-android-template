@@ -12,7 +12,6 @@ import javax.inject.Singleton;
 
 import io.reactivex.Flowable;
 
-
 /**
  * Concrete implementation of a data source as a db.
  */
@@ -29,5 +28,10 @@ public class AppLocalDataSource implements AppDataSource {
     @Override
     public Flowable<List<Item>> getItemList() {
         return mItemDao.fetchItems();
+    }
+
+    @Override
+    public void updateItemList(List<Item> items) {
+        mItemDao.updateMultipleItem(items);
     }
 }

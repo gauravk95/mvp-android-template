@@ -10,4 +10,6 @@ public interface AppDataSource {
 
     Flowable<List<Item>> getItemList();
 
+    void updateItemList(List<Item> items);
+
 }

@@ -33,6 +33,7 @@ public class MainActivity extends BaseActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close_white);
         getSupportActionBar().setTitle(getText(R.string.toolbar_title));
 
         ViewUtils.applyFontForToolbarTitle(this, R.id.toolbar);

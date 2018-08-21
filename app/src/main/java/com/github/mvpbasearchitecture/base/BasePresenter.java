@@ -1,15 +1,17 @@
 package com.github.mvpbasearchitecture.base;
 
+import com.github.mvpbasearchitecture.R;
 import com.github.mvpbasearchitecture.data.source.repository.AppDataSource;
 import com.github.mvpbasearchitecture.data.source.repository.AppRepository;
+import com.github.mvpbasearchitecture.network.NetworkError;
+import com.github.mvpbasearchitecture.utils.GeneralUtils;
 import com.github.mvpbasearchitecture.utils.rx.SchedulerProvider;
 
 import javax.inject.Inject;
 
-import io.reactivex.Scheduler;
 import io.reactivex.disposables.CompositeDisposable;
 
-public class BasePresenter<V> implements BaseContract.Presenter<V>{
+public abstract class BasePresenter<V extends BaseContract.View> implements BaseContract.Presenter<V>{
 
     private final AppRepository mAppDataRepository;
     private final SchedulerProvider mSchedulerProvider;
@@ -17,7 +19,6 @@ public class BasePresenter<V> implements BaseContract.Presenter<V>{
 
     private V mView;
 
-    @Inject
     public BasePresenter(AppRepository appRepository,
                          SchedulerProvider schedulerProvider,
                          CompositeDisposable compositeDisposable) {
@@ -37,6 +38,23 @@ public class BasePresenter<V> implements BaseContract.Presenter<V>{
         mView = null;
     }
 
+    @Override
+    public void handleApiError(Throwable throwable) {
+
+        if (throwable == null) {
+            getView().onError(R.string.default_error_message);
+            return;
+        }
+
+        NetworkError networkError = new NetworkError(throwable);
+        String errorMsg = networkError.getAppErrorMessage();
+        if (GeneralUtils.checkStringNotEmpty(errorMsg))
+            getView().onError(errorMsg);
+        else
+            getView().onError(R.string.default_error_message);
+
+    }
+
     protected boolean isViewAttached() {
         return mView != null;
     }
@@ -49,8 +67,10 @@ public class BasePresenter<V> implements BaseContract.Presenter<V>{
         return mAppDataRepository;
     }
 
-    protected SchedulerProvider getmSchedulerProvider(){
+    protected SchedulerProvider getSchedulerProvider(){
         return mSchedulerProvider;
     }
+
+    protected CompositeDisposable getCompositeDisposable() {return mCompositeDisposable; }
 
 }

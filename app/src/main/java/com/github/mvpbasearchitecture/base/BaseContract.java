@@ -23,6 +23,10 @@ public interface BaseContract {
 
         void showSnackBarMessage(@StringRes int stringResourceId);
 
+        void onError(String message);
+
+        void onError(@StringRes int resId);
+
     }
 
     interface Presenter<V> {
@@ -30,6 +34,8 @@ public interface BaseContract {
         void onAttach(V view);
 
         void onDetach();
+
+        void handleApiError(Throwable throwable);
 
     }
 

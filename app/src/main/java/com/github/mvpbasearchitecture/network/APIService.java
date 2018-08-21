@@ -9,7 +9,7 @@ import retrofit2.http.GET;
 
 public interface APIService {
 
-    @GET
+    @GET("itemlist")
     Flowable<ResponseItemHolder> getItemList();
 
 }

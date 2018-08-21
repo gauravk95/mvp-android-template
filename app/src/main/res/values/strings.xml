@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">MVPBaseArchitecture</string>
-    <string name="toolbar_title">Toolbar</string>
+    <string name="toolbar_title">MVP Sample</string>
+
+    <string name="no_item_in_list">No items in the list!</string>
+
+    <string name="default_error_message">Something went wrong! Please try again.</string>
+    <string name="please_wait">Please wait…</string>
+
 </resources>

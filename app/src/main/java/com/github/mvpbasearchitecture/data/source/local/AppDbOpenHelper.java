@@ -16,7 +16,7 @@ public class AppDbOpenHelper{
 
     @Inject
     public AppDbOpenHelper(@ApplicationContext Context context, @DatabaseInfo String name) {
-        mDatabase = Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class,name)
+        mDatabase = Room.databaseBuilder(context, AppDatabase.class,name)
                 .build();
     }
 

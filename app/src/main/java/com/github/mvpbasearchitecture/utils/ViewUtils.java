@@ -2,6 +2,7 @@ package com.github.mvpbasearchitecture.utils;
 
 import android.app.Activity;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.support.v7.widget.Toolbar;
 import android.util.TypedValue;
@@ -32,6 +33,7 @@ public final class ViewUtils {
                 Typeface titleFont = TypefaceHelper.get(context.getAssets(), "fonts/OpenSans-SemiBold.ttf");
                 if (tv.getText().equals(toolbar.getTitle())) {
                     tv.setTypeface(titleFont);
+                    tv.setTextColor(Color.WHITE);
                     tv.setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getResources().getDimension(R.dimen.toolbar_title));
                     break;
                 }

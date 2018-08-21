@@ -17,21 +17,24 @@ import io.reactivex.Flowable;
 public interface ItemDao {
 
     @Insert
-    void insertOnlySingleItem(Item item);
+    void insertSingleItem(Item item);
 
     @Insert
     void insertMultipleItem(List<Item> itemList);
 
+    @Update
+    void updateMultipleItem(List<Item> itemList);
+
     @Query("SELECT * FROM Item WHERE item_id = :itemId")
-    Flowable<Item> fetchOneItemByItemId(int itemId);
+    Flowable<Item> fetchItemByItemId(int itemId);
 
     @Query("SELECT * FROM Item")
     Flowable<List<Item>> fetchItems();
 
     @Update
-    void updateMovie(Item item);
+    void updateItem(Item item);
 
     @Delete
-    void deleteMovie(Item item);
+    void deleteItem(Item item);
 
 }

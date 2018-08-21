@@ -112,6 +112,20 @@ public abstract class BaseMVPFragment<T> extends Fragment implements BaseContrac
         }
     }
 
+    @Override
+    public void onError(String message) {
+        if (message != null) {
+            showSnackBar(message);
+        } else {
+            showSnackBar(getString(R.string.default_error_message));
+        }
+    }
+
+    @Override
+    public void onError(@StringRes int resId) {
+        onError(getString(resId));
+    }
+
     protected ActivityComponent getActivityComponent() {
         if (mActivity != null) {
             return mActivity.getActivityComponent();
@@ -124,5 +138,7 @@ public abstract class BaseMVPFragment<T> extends Fragment implements BaseContrac
         super.onDestroy();
         dismissProgressDialog();
     }
+
+    protected abstract void initViews();
 
 }

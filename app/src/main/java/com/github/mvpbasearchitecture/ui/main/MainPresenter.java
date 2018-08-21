@@ -1,5 +1,6 @@
 package com.github.mvpbasearchitecture.ui.main;
 
+import com.github.mvpbasearchitecture.R;
 import com.github.mvpbasearchitecture.base.BasePresenter;
 import com.github.mvpbasearchitecture.data.source.repository.AppDataSource;
 import com.github.mvpbasearchitecture.data.source.repository.AppRepository;
@@ -19,4 +20,24 @@ public class MainPresenter extends BasePresenter<MainContract.View> implements M
         super(appRepository, schedulerProvider, compositeDisposable);
     }
 
+    @Override
+    public void loadItems() {
+        getView().showProgressDialog(R.string.please_wait);
+        getCompositeDisposable().add(
+                getDataSource().getItemList()
+                        .subscribeOn(getSchedulerProvider().io())
+                        .observeOn(getSchedulerProvider().ui())
+                        .subscribe(items -> {
+                            getView().dismissProgressDialog();
+                            if (items != null && items.size() > 0)
+                                getView().refreshItemList(items);
+                            else
+                                getView().showEmptyListUI();
+
+                        }, throwable -> {
+                            getView().dismissProgressDialog();
+                            handleApiError(throwable);
+                        })
+        );
+    }
 }

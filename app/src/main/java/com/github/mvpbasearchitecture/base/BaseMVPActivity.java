@@ -115,6 +115,20 @@ public abstract class BaseMVPActivity<T> extends AppCompatActivity implements Ba
     }
 
     @Override
+    public void onError(String message) {
+        if (message != null) {
+            showSnackBar(message);
+        } else {
+            showSnackBar(getString(R.string.default_error_message));
+        }
+    }
+
+    @Override
+    public void onError(@StringRes int resId) {
+        onError(getString(resId));
+    }
+
+    @Override
     protected void onStop() {
         super.onStop();
         dismissProgressDialog();
@@ -125,5 +139,7 @@ public abstract class BaseMVPActivity<T> extends AppCompatActivity implements Ba
         super.onDestroy();
         dismissProgressDialog();
     }
+
+    protected abstract void initViews();
 
 }
