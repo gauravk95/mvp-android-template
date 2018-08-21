@@ -8,18 +8,17 @@ import javax.inject.Singleton;
  */
 
 @Singleton
-public class RetrofitHelper {
+public class APIHelper implements NetworkAPIs {
 
-    private final RetrofitHelper instance = null;
     private APIService mAPIService;
 
     @Inject
-    public RetrofitHelper(APIService service){
+    public APIHelper(APIService service){
        this.mAPIService = service;
     }
 
-    public APIService getApiService() {
+    @Override
+    public APIService getAPIService() {
         return mAPIService;
     }
-
 }

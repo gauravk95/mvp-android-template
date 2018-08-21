@@ -60,6 +60,7 @@ dependencies {
 
     //database dependencies
     implementation "android.arch.persistence.room:runtime:$roomDBVersion"
+    implementation "android.arch.persistence.room:rxjava2:$roomDBVersion"
     annotationProcessor "android.arch.persistence.room:compiler:$roomDBVersion"
 
     //dependency injection

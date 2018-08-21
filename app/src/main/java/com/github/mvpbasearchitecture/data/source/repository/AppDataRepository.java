@@ -1,10 +1,16 @@
 package com.github.mvpbasearchitecture.data.source.repository;
 
+import com.github.mvpbasearchitecture.data.models.local.Item;
 import com.github.mvpbasearchitecture.di.Local;
 import com.github.mvpbasearchitecture.di.Remote;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.inject.Singleton;
+
+import io.reactivex.Flowable;
 
 @Singleton
 public class AppDataRepository implements AppRepository {
@@ -24,5 +30,13 @@ public class AppDataRepository implements AppRepository {
                              @Local AppDataSource localDataSource){
         mRemoteAppDataSource = remoteDataSource;
         mLocalAppDataSource = localDataSource;
+    }
+
+    @Override
+    public Flowable<List<Item>> getItemList() {
+        if (mCacheIsDirty){
+            return mRemoteAppDataSource.getItemList();
+        }
+        return mLocalAppDataSource.getItemList();
     }
 }

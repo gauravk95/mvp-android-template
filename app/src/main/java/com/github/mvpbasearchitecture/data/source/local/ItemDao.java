@@ -8,7 +8,10 @@ import android.arch.persistence.room.Update;
 
 import com.github.mvpbasearchitecture.data.models.local.Item;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import io.reactivex.Flowable;
 
 @Dao
 public interface ItemDao {
@@ -20,7 +23,10 @@ public interface ItemDao {
     void insertMultipleItem(List<Item> itemList);
 
     @Query("SELECT * FROM Item WHERE item_id = :itemId")
-    Item fetchOneItemByItemId(int itemId);
+    Flowable<Item> fetchOneItemByItemId(int itemId);
+
+    @Query("SELECT * FROM Item")
+    Flowable<List<Item>> fetchItems();
 
     @Update
     void updateMovie(Item item);

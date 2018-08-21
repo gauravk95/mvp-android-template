@@ -10,7 +10,7 @@ import com.github.mvpbasearchitecture.R;
 /**
  * Created by gk.
  */
-
+@SuppressWarnings("deprecation")
 public final class DialogUtils {
 
     public static ProgressDialog createProgressDialog(Context context) {

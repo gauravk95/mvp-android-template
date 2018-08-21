@@ -2,7 +2,9 @@ package com.github.mvpbasearchitecture.di.module;
 
 import com.github.mvpbasearchitecture.BuildConfig;
 import com.github.mvpbasearchitecture.network.APIService;
+import com.github.mvpbasearchitecture.network.NetworkAPIs;
 import com.github.mvpbasearchitecture.network.NetworkUtils;
+import com.github.mvpbasearchitecture.network.APIHelper;
 import com.github.mvpbasearchitecture.utils.AppConstants;
 
 import java.util.concurrent.TimeUnit;
@@ -59,10 +61,14 @@ public class NetworkModule {
 
     @Provides
     @Singleton
-    public APIService providesNetworkService(
-            Retrofit retrofit) {
+    public APIService providesNetworkService(Retrofit retrofit) {
         return retrofit.create(APIService.class);
     }
 
+    @Provides
+    @Singleton
+    public NetworkAPIs providesRetrofitHelper(APIHelper apiHelper) {
+        return apiHelper;
+    }
 
 }

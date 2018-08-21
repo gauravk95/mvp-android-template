@@ -9,6 +9,7 @@ import android.support.annotation.Nullable;
 import com.github.mvpbasearchitecture.utils.AppLogger;
 
 /**
+ * This is a dummy sync class and is not registered in the manifest for the same reason
  * Created by gk
  */
 
