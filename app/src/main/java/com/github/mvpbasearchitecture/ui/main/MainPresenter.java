@@ -28,13 +28,18 @@ public class MainPresenter extends BasePresenter<MainContract.View> implements M
                         .subscribeOn(getSchedulerProvider().io())
                         .observeOn(getSchedulerProvider().ui())
                         .subscribe(items -> {
+                            if (!isViewAttached())
+                                return;
+
                             getView().dismissProgressDialog();
                             if (items != null && items.size() > 0)
                                 getView().refreshItemList(items);
                             else
                                 getView().showEmptyListUI();
-
                         }, throwable -> {
+                            if (!isViewAttached())
+                                return;
+
                             getView().dismissProgressDialog();
                             handleApiError(throwable);
                         })
