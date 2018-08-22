@@ -1,11 +1,11 @@
 package com.github.mvpbasearchitecture.di.module;
 
-import com.github.mvpbasearchitecture.data.source.local.AppDatabase;
-import com.github.mvpbasearchitecture.data.source.local.AppDbOpenHelper;
-import com.github.mvpbasearchitecture.data.source.local.AppLocalDataSource;
+import com.github.mvpbasearchitecture.data.source.db.AppDatabase;
+import com.github.mvpbasearchitecture.data.source.db.AppDbOpenHelper;
+import com.github.mvpbasearchitecture.data.source.repository.local.AppLocalDataSource;
 import com.github.mvpbasearchitecture.data.source.prefs.AppPreferencesHelper;
 import com.github.mvpbasearchitecture.data.source.prefs.PreferencesHelper;
-import com.github.mvpbasearchitecture.data.source.remote.AppRemoteDataSource;
+import com.github.mvpbasearchitecture.data.source.repository.remote.AppRemoteDataSource;
 import com.github.mvpbasearchitecture.data.source.repository.AppDataRepository;
 import com.github.mvpbasearchitecture.data.source.repository.AppDataSource;
 import com.github.mvpbasearchitecture.data.source.repository.AppRepository;

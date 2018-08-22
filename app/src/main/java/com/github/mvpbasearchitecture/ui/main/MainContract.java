@@ -19,7 +19,7 @@ public interface MainContract {
 
     interface Presenter extends BaseContract.Presenter<View> {
 
-        void loadItems();
+        void loadItems(boolean refresh);
 
     }
 }

@@ -1,8 +1,9 @@
-package com.github.mvpbasearchitecture.data.source.local;
+package com.github.mvpbasearchitecture.data.source.db;
 
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
+import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
 
@@ -16,14 +17,11 @@ import io.reactivex.Flowable;
 @Dao
 public interface ItemDao {
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertSingleItem(Item item);
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertMultipleItem(List<Item> itemList);
-
-    @Update
-    void updateMultipleItem(List<Item> itemList);
 
     @Query("SELECT * FROM Item WHERE item_id = :itemId")
     Flowable<Item> fetchItemByItemId(int itemId);

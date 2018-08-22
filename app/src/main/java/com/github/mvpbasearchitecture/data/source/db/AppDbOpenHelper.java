@@ -1,4 +1,4 @@
-package com.github.mvpbasearchitecture.data.source.local;
+package com.github.mvpbasearchitecture.data.source.db;
 
 import android.arch.persistence.room.Room;
 import android.content.Context;

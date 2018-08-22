@@ -1,8 +1,6 @@
-package com.github.mvpbasearchitecture.network;
+package com.github.mvpbasearchitecture.data.source.network;
 
 import com.github.mvpbasearchitecture.data.models.remote.ResponseItemHolder;
-
-import java.util.ArrayList;
 
 import io.reactivex.Flowable;
 import retrofit2.http.GET;

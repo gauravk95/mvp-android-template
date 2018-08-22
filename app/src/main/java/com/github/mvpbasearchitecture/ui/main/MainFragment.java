@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.github.mvpbasearchitecture.R;
@@ -33,6 +34,7 @@ public class MainFragment extends BaseMVPFragment<MainContract.Presenter> implem
 
     private RecyclerView mRecyclerView;
     private TextView mEmptyListText;
+    private Button mRefreshItemBtn;
 
     public static MainFragment newInstance() {
         return new MainFragment();
@@ -52,16 +54,23 @@ public class MainFragment extends BaseMVPFragment<MainContract.Presenter> implem
         this.inflatedView = inflater.inflate(R.layout.fragment_main, container, false);
 
         initViews();
+        setupListeners();
 
         ActivityComponent component = getActivityComponent();
         if (component != null) {
             component.inject(this);
             mPresenter.onAttach(this);
 
-            mPresenter.loadItems();
+            mPresenter.loadItems(false);
         }
 
         return inflatedView;
+    }
+
+    private void setupListeners() {
+        mRefreshItemBtn.setOnClickListener(view -> {
+            mPresenter.loadItems(true);
+        });
     }
 
     @Override
@@ -69,6 +78,7 @@ public class MainFragment extends BaseMVPFragment<MainContract.Presenter> implem
         //initialize view here
         mRecyclerView = inflatedView.findViewById(R.id.item_recycler_view);
         mEmptyListText = inflatedView.findViewById(R.id.empty_list_text);
+        mRefreshItemBtn = inflatedView.findViewById(R.id.refresh_items);
     }
 
     @Override

@@ -3,11 +3,9 @@ package com.github.mvpbasearchitecture.base;
 import com.github.mvpbasearchitecture.R;
 import com.github.mvpbasearchitecture.data.source.repository.AppDataSource;
 import com.github.mvpbasearchitecture.data.source.repository.AppRepository;
-import com.github.mvpbasearchitecture.network.NetworkError;
+import com.github.mvpbasearchitecture.data.source.network.NetworkError;
 import com.github.mvpbasearchitecture.utils.GeneralUtils;
 import com.github.mvpbasearchitecture.utils.rx.SchedulerProvider;
-
-import javax.inject.Inject;
 
 import io.reactivex.disposables.CompositeDisposable;
 
@@ -63,7 +61,7 @@ public abstract class BasePresenter<V extends BaseContract.View> implements Base
         return mView;
     }
 
-    protected AppDataSource getDataSource(){
+    protected AppRepository getDataSource(){
         return mAppDataRepository;
     }
 

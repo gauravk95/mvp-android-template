@@ -1,4 +1,4 @@
-package com.github.mvpbasearchitecture.network;
+package com.github.mvpbasearchitecture.data.source.network;
 
 import org.json.JSONObject;
 

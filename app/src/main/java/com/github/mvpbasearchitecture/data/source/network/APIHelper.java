@@ -1,4 +1,4 @@
-package com.github.mvpbasearchitecture.network;
+package com.github.mvpbasearchitecture.data.source.network;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;

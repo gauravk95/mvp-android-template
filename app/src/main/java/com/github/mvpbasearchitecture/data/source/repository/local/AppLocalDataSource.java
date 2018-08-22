@@ -1,8 +1,10 @@
-package com.github.mvpbasearchitecture.data.source.local;
+package com.github.mvpbasearchitecture.data.source.repository.local;
 
 import android.support.annotation.NonNull;
 
 import com.github.mvpbasearchitecture.data.models.local.Item;
+import com.github.mvpbasearchitecture.data.source.db.AppDatabase;
+import com.github.mvpbasearchitecture.data.source.db.ItemDao;
 import com.github.mvpbasearchitecture.data.source.repository.AppDataSource;
 
 import java.util.List;
@@ -32,6 +34,6 @@ public class AppLocalDataSource implements AppDataSource {
 
     @Override
     public void updateItemList(List<Item> items) {
-        mItemDao.updateMultipleItem(items);
+        mItemDao.insertMultipleItem(items);
     }
 }

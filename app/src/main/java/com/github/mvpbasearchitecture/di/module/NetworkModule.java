@@ -1,10 +1,10 @@
 package com.github.mvpbasearchitecture.di.module;
 
 import com.github.mvpbasearchitecture.BuildConfig;
-import com.github.mvpbasearchitecture.network.APIService;
-import com.github.mvpbasearchitecture.network.NetworkAPIs;
-import com.github.mvpbasearchitecture.network.NetworkUtils;
-import com.github.mvpbasearchitecture.network.APIHelper;
+import com.github.mvpbasearchitecture.data.source.network.APIService;
+import com.github.mvpbasearchitecture.data.source.network.NetworkAPIs;
+import com.github.mvpbasearchitecture.data.source.network.NetworkUtils;
+import com.github.mvpbasearchitecture.data.source.network.APIHelper;
 import com.github.mvpbasearchitecture.utils.AppConstants;
 
 import java.util.concurrent.TimeUnit;

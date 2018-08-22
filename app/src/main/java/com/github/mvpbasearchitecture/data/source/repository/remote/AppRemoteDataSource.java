@@ -1,11 +1,10 @@
-package com.github.mvpbasearchitecture.data.source.remote;
+package com.github.mvpbasearchitecture.data.source.repository.remote;
 
 import com.github.mvpbasearchitecture.data.models.local.Item;
 import com.github.mvpbasearchitecture.data.models.remote.ResponseItemHolder;
 import com.github.mvpbasearchitecture.data.source.repository.AppDataSource;
-import com.github.mvpbasearchitecture.network.NetworkAPIs;
+import com.github.mvpbasearchitecture.data.source.network.NetworkAPIs;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;

@@ -21,8 +21,10 @@ public class MainPresenter extends BasePresenter<MainContract.View> implements M
     }
 
     @Override
-    public void loadItems() {
+    public void loadItems(boolean refresh) {
         getView().showProgressDialog(R.string.please_wait);
+        if (refresh)
+            getDataSource().refreshItems();
         getCompositeDisposable().add(
                 getDataSource().getItemList()
                         .subscribeOn(getSchedulerProvider().io())
