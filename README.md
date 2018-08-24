@@ -9,6 +9,9 @@ A MVP Android Template to give you a Quick Head Start for your next Android Proj
 * **Retrofit 2** - As Type Safe HTTP client
 * **Room** - For persistance storage(abstraction of SQLite)
 
+### MVP Architecture Blueprint
+![Architecture](https://raw.githubusercontent.com/gauravk95/mvp-android-template/master/MVPArchBlueprint.jpg)
+
 ### The app has following packages:
 1. **base:** It contains base classes
 2. **data:** It contains all the data accessing and manipulating components like data models, sources, repositories
