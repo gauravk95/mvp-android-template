@@ -1,6 +1,8 @@
 # MVP Android Template
 A MVP Android Template to give you a Quick Head Start for your next Android Project. It contains the boilerplate code that one needs to quickly start a new project with MVP Architecture.
 
+![Sample](https://raw.githubusercontent.com/gauravk95/mvp-android-template/master/sample.gif)
+
 ### This project uses:
 * RxJava 2 - For Reactive Programming
 * Dagger 2 - For Dependency Injection
