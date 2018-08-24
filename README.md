@@ -1,5 +1,5 @@
 # MVP Android Template
-A MVP Android Template to give you a Quick Head Start for your next Android Project. It contains the boilerplate code to quickly setup your project for MVP Architecture.
+A MVP Android Template to give you a Head Start for your next Android Project. It contains the boilerplate code to quickly setup your project for MVP Architecture using industry standard practices and popular libraries like RxJava, Dagger, Retrofit and Room.
 
 ![Sample](https://raw.githubusercontent.com/gauravk95/mvp-android-template/master/sample.gif)
 
