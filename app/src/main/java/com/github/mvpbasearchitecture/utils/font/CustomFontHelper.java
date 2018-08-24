@@ -9,6 +9,8 @@ import android.widget.TextView;
 import com.github.mvpbasearchitecture.R;
 
 /**
+ * Helper function to set Custom fonts
+ *
  * Created by gk
  */
 

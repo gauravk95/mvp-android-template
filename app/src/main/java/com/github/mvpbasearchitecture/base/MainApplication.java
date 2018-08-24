@@ -14,6 +14,13 @@ import com.github.mvpbasearchitecture.utils.AppLogger;
 
 import javax.inject.Inject;
 
+/**
+ * Entry place when application start
+ * Good place to initialize stuff that has an Application Scope
+ *
+ * Created by gk
+ */
+
 public class MainApplication extends Application {
 
     @Inject

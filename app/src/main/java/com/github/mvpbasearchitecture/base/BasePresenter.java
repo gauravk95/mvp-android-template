@@ -9,6 +9,13 @@ import com.github.mvpbasearchitecture.utils.rx.SchedulerProvider;
 
 import io.reactivex.disposables.CompositeDisposable;
 
+/**
+ * Base Presenter class that abstracts some of the repetitive work of a Presenter
+ * Implements the basic functions as described in {@link BaseContract.Presenter}
+ *
+ * Created by gk
+ */
+
 public abstract class BasePresenter<V extends BaseContract.View> implements BaseContract.Presenter<V>{
 
     private final AppRepository mAppDataRepository;

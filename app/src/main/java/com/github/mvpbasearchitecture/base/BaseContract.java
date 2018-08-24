@@ -3,6 +3,14 @@ package com.github.mvpbasearchitecture.base;
 import android.support.annotation.NonNull;
 import android.support.annotation.StringRes;
 
+/**
+ * The base contract
+ * Consists of the Presenter and View interface
+ * Helps in communication/establish contract between View and Presenter
+ *
+ * Created by gk
+ */
+
 public interface BaseContract {
 
     interface View<T> {

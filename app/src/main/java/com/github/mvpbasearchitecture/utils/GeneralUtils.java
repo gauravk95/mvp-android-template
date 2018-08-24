@@ -7,6 +7,12 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.signature.StringSignature;
 import com.github.mvpbasearchitecture.R;
 
+/**
+ * Utilities for other general stuffs
+ *
+ * Created by gk
+ */
+
 public final class GeneralUtils {
 
     public static boolean checkStringNotEmpty(String str) {

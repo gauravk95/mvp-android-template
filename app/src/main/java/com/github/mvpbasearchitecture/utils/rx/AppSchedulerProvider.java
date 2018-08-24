@@ -5,6 +5,8 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
 /**
+ * Helper class to provide {@link Schedulers} for RxJava related operations
+ *
  * Created by gk.
  */
 

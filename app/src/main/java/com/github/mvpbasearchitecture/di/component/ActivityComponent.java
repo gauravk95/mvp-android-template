@@ -8,6 +8,8 @@ import com.github.mvpbasearchitecture.ui.main.MainFragment;
 import dagger.Component;
 
 /**
+ * Activity component connecting modules that have Activity scope
+ * 
  * Created by gk.
  */
 

@@ -20,6 +20,12 @@ import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
 
+/**
+ * Modules related to data and repository
+ *
+ * Created by gk.
+ */
+
 @Module
 public class DataModule {
 

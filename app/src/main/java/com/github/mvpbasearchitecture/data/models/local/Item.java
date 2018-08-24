@@ -9,6 +9,15 @@ import android.support.annotation.Nullable;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * Describes the data to be modeled
+ * Note:
+ * Uses both the Room specific annotations for Local DB
+ * Uses Gson annotations for Json serialization for Network requests
+ *
+ * Created by gk
+ */
+
 @Entity(tableName = "item")
 public class Item {
 

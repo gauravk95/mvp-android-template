@@ -3,6 +3,7 @@ package com.github.mvpbasearchitecture.data.source.repository;
 import android.support.annotation.VisibleForTesting;
 
 import com.github.mvpbasearchitecture.data.models.local.Item;
+import com.github.mvpbasearchitecture.data.source.prefs.PreferencesHelper;
 import com.github.mvpbasearchitecture.di.Local;
 import com.github.mvpbasearchitecture.di.Remote;
 
@@ -13,12 +14,20 @@ import javax.inject.Singleton;
 
 import io.reactivex.Flowable;
 
+/**
+ * The central point to communicate to different data sources like DB, SERVER, SHARED PREFS
+ *
+ * Created by gk
+ */
+
 @Singleton
 public class AppDataRepository implements AppRepository {
 
     private final AppDataSource mLocalAppDataSource;
 
     private final AppDataSource mRemoteAppDataSource;
+
+    private final PreferencesHelper mPreferenceHelper;
 
     @VisibleForTesting
     List<Item> mCachedItemList;
@@ -32,9 +41,11 @@ public class AppDataRepository implements AppRepository {
 
     @Inject
     public AppDataRepository(@Remote AppDataSource remoteDataSource,
-                             @Local AppDataSource localDataSource) {
+                             @Local AppDataSource localDataSource,
+                             PreferencesHelper preferencesHelper) {
         mRemoteAppDataSource = remoteDataSource;
         mLocalAppDataSource = localDataSource;
+        mPreferenceHelper = preferencesHelper;
     }
 
     @Override
@@ -59,6 +70,7 @@ public class AppDataRepository implements AppRepository {
         return getItemFromLocalDB();
     }
 
+    //get the items from the server
     private Flowable<List<Item>> getItemFromServerDB() {
         return mRemoteAppDataSource
                 .getItemList()

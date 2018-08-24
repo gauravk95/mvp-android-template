@@ -8,6 +8,12 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Holds the list of items from the sever
+ *
+ * Created by gk
+ */
+
 public class ResponseItemHolder implements Serializable{
 
     @SerializedName("itemList")

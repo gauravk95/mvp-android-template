@@ -15,6 +15,12 @@ import javax.inject.Singleton;
 
 import dagger.Component;
 
+/**
+ * Application component connecting modules that have application scope
+ *
+ * Created by gk
+ */
+
 @Singleton
 @Component(modules = {ApplicationModule.class, DataModule.class, NetworkModule.class})
 public interface ApplicationComponent {

@@ -6,12 +6,14 @@ import android.view.MenuItem;
 
 import com.github.mvpbasearchitecture.R;
 import com.github.mvpbasearchitecture.base.BaseActivity;
-import com.github.mvpbasearchitecture.di.component.ActivityComponent;
 import com.github.mvpbasearchitecture.utils.ActivityUtils;
 import com.github.mvpbasearchitecture.utils.ViewUtils;
 
-import javax.inject.Inject;
-
+/**
+ * The main activity the application when launched
+ *
+ * Created by gk
+ */
 public class MainActivity extends BaseActivity {
 
     @Override

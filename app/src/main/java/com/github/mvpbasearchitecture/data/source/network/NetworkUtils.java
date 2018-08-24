@@ -3,8 +3,11 @@ package com.github.mvpbasearchitecture.data.source.network;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 
-;
-
+/**
+ * Utilities for Network related stuffs
+ *
+ * Created by gk
+ */
 public class NetworkUtils {
 
     // Adds token as a header to the OkHttpClient making the request.

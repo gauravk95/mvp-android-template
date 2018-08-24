@@ -12,10 +12,12 @@ import javax.inject.Singleton;
 
 import io.reactivex.Flowable;
 
-
 /**
- * Concrete implementation of a data source as a db.
+ * Concrete implementation of a data source from remote server, using retrofit
+ *
+ * Created by gk
  */
+
 @Singleton
 public class AppRemoteDataSource implements AppDataSource {
 

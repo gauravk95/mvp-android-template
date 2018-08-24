@@ -6,6 +6,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+/**
+ * Used to change the font of a {@link ViewGroup} and its child
+ *
+ * Created by gk
+ */
+
 public class FontChangeCrawler
 {
     private Typeface typeface;

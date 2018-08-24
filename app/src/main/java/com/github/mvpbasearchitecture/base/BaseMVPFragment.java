@@ -19,8 +19,12 @@ import com.github.mvpbasearchitecture.utils.DialogUtils;
 import com.github.mvpbasearchitecture.utils.GeneralUtils;
 
 /**
+ * Acts a Base Fragment class for all other {@link Fragment} which will act as View part of MVP
+ * Implements the basic functions as described in {@link BaseContract.View}
+ *
  * Created by gk
  */
+
 public abstract class BaseMVPFragment<T> extends Fragment implements BaseContract.View<T> {
 
     protected Dialog progressDialog;

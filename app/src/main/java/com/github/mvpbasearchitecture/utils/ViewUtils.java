@@ -12,6 +12,12 @@ import android.widget.TextView;
 import com.github.mvpbasearchitecture.R;
 import com.github.mvpbasearchitecture.utils.font.TypefaceHelper;
 
+/**
+ * Utilities for View related stuffs
+ *
+ * Created by gk
+ */
+
 public final class ViewUtils {
 
     public static float pxToDp(float px) {

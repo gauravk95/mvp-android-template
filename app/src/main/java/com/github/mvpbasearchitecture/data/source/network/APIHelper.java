@@ -4,6 +4,8 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 
 /**
+ * Helping with retrofit instance
+ *
  * Created by gk
  */
 

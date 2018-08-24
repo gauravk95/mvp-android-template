@@ -14,6 +14,11 @@ import com.github.mvpbasearchitecture.utils.GeneralUtils;
 
 import java.util.List;
 
+/**
+ * Adapter that used to display {@link Item} in a recycler view
+ *
+ * Created by gk
+ */
 public class MainItemListAdapter extends RecyclerView.Adapter<MainItemListAdapter.MyViewHolder> {
 
     private Context mContext;

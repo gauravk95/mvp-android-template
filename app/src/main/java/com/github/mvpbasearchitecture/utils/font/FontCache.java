@@ -6,6 +6,8 @@ import android.graphics.Typeface;
 import java.util.Hashtable;
 
 /**
+ * Helper function to cache font
+ *
  * Created by gk
  */
 

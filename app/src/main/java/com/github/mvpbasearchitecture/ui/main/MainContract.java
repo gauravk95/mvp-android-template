@@ -7,6 +7,11 @@ import com.github.mvpbasearchitecture.data.models.local.Item;
 
 import java.util.List;
 
+/**
+ * The main contract, consists of Screen specific Presenter and View interface
+ *
+ * Created by gk
+ */
 public interface MainContract {
 
     interface View extends BaseContract.View<Presenter> {

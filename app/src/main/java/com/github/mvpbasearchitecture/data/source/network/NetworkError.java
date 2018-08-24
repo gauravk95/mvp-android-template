@@ -15,6 +15,8 @@ import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 import static java.net.HttpURLConnection.HTTP_UNAUTHORIZED;
 
 /**
+ * Helps converting network exception to appropriate error type
+ *
  * Created by gk
  */
 

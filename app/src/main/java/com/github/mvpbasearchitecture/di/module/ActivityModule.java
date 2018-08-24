@@ -16,6 +16,8 @@ import dagger.Provides;
 import io.reactivex.disposables.CompositeDisposable;
 
 /**
+ * Modules related to activity
+ *
  * Created by gk.
  */
 

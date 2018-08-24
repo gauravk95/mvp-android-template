@@ -6,6 +6,11 @@ import android.util.AttributeSet;
 
 import com.github.mvpbasearchitecture.utils.font.CustomFontHelper;
 
+/**
+ * A Custom text view
+ *
+ * Created by gk
+ */
 public class CustomTextView extends AppCompatTextView {
 
     public CustomTextView(Context context) {

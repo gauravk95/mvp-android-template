@@ -21,6 +21,9 @@ import com.github.mvpbasearchitecture.utils.DialogUtils;
 import com.github.mvpbasearchitecture.utils.GeneralUtils;
 
 /**
+ * Acts a Base Activity class for all other activities which will act as View part of MVP
+ * Implements the basic functions as described in {@link BaseContract.View}
+ *
  * Created by gk
  */
 

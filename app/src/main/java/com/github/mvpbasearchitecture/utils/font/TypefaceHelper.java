@@ -7,6 +7,12 @@ import com.github.mvpbasearchitecture.utils.AppLogger;
 
 import java.util.Hashtable;
 
+/**
+ * Another helper function to cache and provide typeface
+ *
+ * Created by gk
+ */
+
 public class TypefaceHelper {
     private static final String TAG = "TypefaceHelper";
 

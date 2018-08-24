@@ -17,6 +17,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+/**
+ * Utilities for File related stuffs
+ *
+ * Created by gk
+ */
+
 public final class FileUtils {
 
     private static final String TAG = "FileUtils";

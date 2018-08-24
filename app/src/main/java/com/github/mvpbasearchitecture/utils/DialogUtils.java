@@ -8,11 +8,23 @@ import android.graphics.drawable.ColorDrawable;
 import com.github.mvpbasearchitecture.R;
 
 /**
- * Created by gk.
+ * Utilities for Dialog related stuffs
+ *
+ * Note: This used the {@link ProgressDialog} that is Deprecated
+ * Its advisable to use {@link android.app.DialogFragment} to Create your own
+ * custom progress dialog
+ *
+ * Created by gk
  */
+
 @SuppressWarnings("deprecation")
 public final class DialogUtils {
 
+    /**
+     * Creates a Progress Dialog
+     * @param context
+     * @return
+     */
     public static ProgressDialog createProgressDialog(Context context) {
         ProgressDialog progressDialog = new ProgressDialog(context);
         progressDialog.show();

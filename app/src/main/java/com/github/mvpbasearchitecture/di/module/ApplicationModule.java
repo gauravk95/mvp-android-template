@@ -13,6 +13,12 @@ import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
 
+/**
+ * Modules related to application
+ *
+ * Created by gk.
+ */
+
 @Module
 public class ApplicationModule {
 

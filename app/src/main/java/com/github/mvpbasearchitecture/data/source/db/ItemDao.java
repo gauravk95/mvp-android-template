@@ -14,6 +14,12 @@ import java.util.List;
 
 import io.reactivex.Flowable;
 
+/**
+ * Data access objects for connection to SQLite DB using Room
+ *
+ * Created by gk
+ */
+
 @Dao
 public interface ItemDao {
 

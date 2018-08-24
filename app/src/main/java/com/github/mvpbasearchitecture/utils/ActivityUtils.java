@@ -5,6 +5,12 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
+/**
+ * Utilities for Activities related stuffs
+ *
+ * Created by gk
+ */
+
 public final class ActivityUtils {
 
     /**

@@ -1,12 +1,17 @@
 package com.github.mvpbasearchitecture.utils;
 
 import android.app.Activity;
-import android.content.Context;
 import android.graphics.Point;
 import android.view.Display;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+
+/**
+ * Utilities for Screen related stuffs
+ *
+ * Created by gk
+ */
 
 public final class ScreenUtils {
 

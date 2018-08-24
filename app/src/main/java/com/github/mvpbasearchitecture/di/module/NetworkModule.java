@@ -18,6 +18,12 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * Modules related to network
+ *
+ * Created by gk.
+ */
+
 @Module
 public class NetworkModule {
 

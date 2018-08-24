@@ -9,6 +9,12 @@ import com.github.mvpbasearchitecture.di.DatabaseInfo;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
+/**
+ * A DB Helper class to build Room DB
+ *
+ * Created by gk
+ */
+
 @Singleton
 public class AppDbOpenHelper{
 

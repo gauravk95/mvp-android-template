@@ -15,7 +15,7 @@ import javax.inject.Singleton;
 import io.reactivex.Flowable;
 
 /**
- * Concrete implementation of a data source as a db.
+ * Concrete implementation of a data source as a db using room.
  */
 @Singleton
 public class AppLocalDataSource implements AppDataSource {

@@ -22,9 +22,12 @@ import java.util.List;
 import javax.inject.Inject;
 
 /**
+ * Main Fragment where most of the UI stuff happens
+ * Extends functionality of {@link BaseMVPFragment}
+ * Implements Screen specific ui tasks {@link MainContract.View}
+ *
  * Created by gk
  */
-
 public class MainFragment extends BaseMVPFragment<MainContract.Presenter> implements MainContract.View {
 
     private View inflatedView;

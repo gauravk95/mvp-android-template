@@ -6,8 +6,9 @@ import android.arch.persistence.room.RoomDatabase;
 import com.github.mvpbasearchitecture.data.models.local.Item;
 
 /**
- * The Room Database that contains the Task table.
+ * The Room Database that contains the Item table.
  */
+
 @Database(entities = {Item.class}, version = 1)
 public abstract class AppDatabase extends RoomDatabase {
 

@@ -4,6 +4,12 @@ import android.app.Activity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
+/**
+ * Utilities for Keyboard related stuffs
+ *
+ * Created by gk
+ */
+
 public final class KeyboardUtils {
 
     public static void hideKeyboard(Activity activity) {

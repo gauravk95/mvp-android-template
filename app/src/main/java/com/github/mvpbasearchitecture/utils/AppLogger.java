@@ -4,6 +4,12 @@ import android.util.Log;
 
 import com.github.mvpbasearchitecture.BuildConfig;
 
+/**
+ * An App logger to only log in Debug mode
+ *
+ * Created by gk
+ */
+
 public class AppLogger {
 
     private static boolean isDebugMode = true;

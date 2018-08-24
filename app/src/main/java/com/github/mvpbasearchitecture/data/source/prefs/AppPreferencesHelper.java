@@ -10,8 +10,11 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 
 /**
+ * An Helper class for Shared Preferences
+ *
  * Created by gk.
  */
+
 @Singleton
 public class AppPreferencesHelper implements PreferencesHelper {
 

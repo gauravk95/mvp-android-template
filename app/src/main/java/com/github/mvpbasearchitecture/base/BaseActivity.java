@@ -10,6 +10,9 @@ import com.github.mvpbasearchitecture.di.component.DaggerActivityComponent;
 import com.github.mvpbasearchitecture.di.module.ActivityModule;
 
 /**
+ * Base activity without any MVP component
+ * Used to declare Activities that are dumb and only act as holder to other fragments
+ *
  * Created by gk
  */
 
