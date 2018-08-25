@@ -6,6 +6,6 @@
 
     <string name="default_error_message">Something went wrong! Please try again.</string>
     <string name="please_wait">Please wait…</string>
-    <string name="label_refresh">Referesh</string>
+    <string name="label_refresh">Refresh</string>
 
 </resources>
