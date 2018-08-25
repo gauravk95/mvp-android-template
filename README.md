@@ -7,7 +7,7 @@ A MVP Android Template to give you a Head Start for your next Android Project. I
 * **RxJava 2** - For Reactive Programming
 * **Dagger 2** - For Dependency Injection
 * **Retrofit 2** - As Type Safe HTTP client
-* **Room** - For persistance storage(abstraction of SQLite)
+* **Room** - For persistence storage(abstraction of SQLite)
 
 ### MVP Architecture Blueprint
 ![Architecture](https://raw.githubusercontent.com/gauravk95/mvp-android-template/master/MVPArchBlueprint.jpg)
