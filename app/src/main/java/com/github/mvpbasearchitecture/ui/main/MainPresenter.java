@@ -23,15 +23,18 @@ import com.github.mvpbasearchitecture.utils.rx.SchedulerProvider;
 import javax.inject.Inject;
 
 import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.disposables.Disposable;
 
 /**
  * Main Fragment where most of the UI stuff happens
  * Extends functionality of {@link BasePresenter}
  * Implements Screen specific Presenter tasks {@link MainContract.Presenter}
- *
+ * <p>
  * Created by gk
  */
 public class MainPresenter extends BasePresenter<MainContract.View> implements MainContract.Presenter {
+
+    private Disposable mDisposable;
 
     @Inject
     public MainPresenter(AppRepository appRepository,
@@ -43,28 +46,34 @@ public class MainPresenter extends BasePresenter<MainContract.View> implements M
     @Override
     public void loadItems(boolean refresh) {
         getView().showProgressDialog(R.string.please_wait);
+
         if (refresh)
             getDataSource().refreshItems();
-        getCompositeDisposable().add(
-                getDataSource().getItemList()
-                        .subscribeOn(getSchedulerProvider().io())
-                        .observeOn(getSchedulerProvider().ui())
-                        .subscribe(items -> {
-                            if (!isViewAttached())
-                                return;
 
-                            getView().dismissProgressDialog();
-                            if (items != null && items.size() > 0)
-                                getView().refreshItemList(items);
-                            else
-                                getView().showEmptyListUI();
-                        }, throwable -> {
-                            if (!isViewAttached())
-                                return;
+        //remove the previous disposable from composite disposable, for multiple load items calls
+        if (mDisposable != null)
+            getCompositeDisposable().delete(mDisposable);
 
-                            getView().dismissProgressDialog();
-                            handleApiError(throwable);
-                        })
-        );
+        mDisposable = getDataSource().getItemList()
+                .subscribeOn(getSchedulerProvider().io())
+                .observeOn(getSchedulerProvider().ui())
+                .subscribe(items -> {
+                    if (!isViewAttached())
+                        return;
+
+                    getView().dismissProgressDialog();
+                    if (items != null && items.size() > 0)
+                        getView().refreshItemList(items);
+                    else
+                        getView().showEmptyListUI();
+                }, throwable -> {
+                    if (!isViewAttached())
+                        return;
+
+                    getView().dismissProgressDialog();
+                    handleApiError(throwable);
+                });
+
+        getCompositeDisposable().add(mDisposable);
     }
 }
