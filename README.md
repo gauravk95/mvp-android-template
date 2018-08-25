@@ -22,9 +22,9 @@ A MVP Android Template to give you a Head Start for your next Android Project. I
       * db
       * network
       * prefs
-    * repository
-      * local
-      * remote
+      * repository
+         * local
+         * remote
 3. **di:** Dependency providing classes using Dagger2.
     * component
     * module
